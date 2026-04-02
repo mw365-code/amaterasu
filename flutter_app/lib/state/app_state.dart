@@ -1,37 +1,38 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' show ChangeNotifier;
+
+import '../models/category.dart';
+import '../models/phrase.dart';
 
 class AppState extends ChangeNotifier {
-  // These are typed as dynamic/Object? because your Phrase/Category models
-  // may be implemented later. Replace with real types when you add them.
-  Object? currentCategory;
-  Object? currentPhrase;
+  Category? currentCategory;
+  Phrase? currentPhrase;
 
-  final List<Object> favorites = [];
-  final List<Object> recentlyViewed = [];
+  final List<Phrase> favorites = [];
+  final List<Phrase> recentlyViewed = [];
 
   String searchQuery = '';
 
-  List<Object> currentPhraseList = [];
+  List<Phrase> currentPhraseList = [];
   int currentPhraseIndex = -1;
 
-  void setCategory(Object? category) {
+  void setCategory(Category? category) {
     currentCategory = category;
     notifyListeners();
   }
 
-  void setPhrase(Object? phrase) {
+  void setPhrase(Phrase? phrase) {
     currentPhrase = phrase;
     _addToRecentlyViewed(phrase);
     notifyListeners();
   }
 
-  void setPhraseContext(List<Object>? phrases, Object phrase) {
-    currentPhraseList = List<Object>.from(phrases ?? const []);
+  void setPhraseContext(List<Phrase> phrases, Phrase phrase) {
+    currentPhraseList = List<Phrase>.from(phrases);
     currentPhraseIndex = currentPhraseList.indexOf(phrase);
     setPhrase(phrase);
   }
 
-  Object? nextPhrase() {
+  Phrase? nextPhrase() {
     if (currentPhraseList.isEmpty) return null;
 
     if (currentPhraseIndex < 0) {
@@ -40,11 +41,12 @@ class AppState extends ChangeNotifier {
       currentPhraseIndex = (currentPhraseIndex + 1).clamp(0, currentPhraseList.length - 1);
     }
 
-    setPhrase(currentPhraseList[currentPhraseIndex]);
-    return currentPhrase;
+    final phrase = currentPhraseList[currentPhraseIndex];
+    setPhrase(phrase);
+    return phrase;
   }
 
-  Object? prevPhrase() {
+  Phrase? prevPhrase() {
     if (currentPhraseList.isEmpty) return null;
 
     if (currentPhraseIndex < 0) {
@@ -53,11 +55,12 @@ class AppState extends ChangeNotifier {
       currentPhraseIndex = (currentPhraseIndex - 1).clamp(0, currentPhraseList.length - 1);
     }
 
-    setPhrase(currentPhraseList[currentPhraseIndex]);
-    return currentPhrase;
+    final phrase = currentPhraseList[currentPhraseIndex];
+    setPhrase(phrase);
+    return phrase;
   }
 
-  void toggleFavorite(Object phrase) {
+  void toggleFavorite(Phrase phrase) {
     if (favorites.contains(phrase)) {
       favorites.remove(phrase);
     } else {
@@ -66,14 +69,14 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool isFavorite(Object phrase) => favorites.contains(phrase);
+  bool isFavorite(Phrase phrase) => favorites.contains(phrase);
 
   void setSearchQuery(String query) {
     searchQuery = query;
     notifyListeners();
   }
 
-  void _addToRecentlyViewed(Object? phrase) {
+  void _addToRecentlyViewed(Phrase? phrase) {
     if (phrase == null) return;
 
     recentlyViewed.remove(phrase);

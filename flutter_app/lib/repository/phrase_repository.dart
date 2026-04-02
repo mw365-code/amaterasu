@@ -1,31 +1,26 @@
 import '../models/category.dart';
 import '../models/phrase.dart';
+import '../services/phrase_catalog.dart';
 
 class PhraseRepository {
-  const PhraseRepository();
+  PhraseCatalog? _cache;
 
-  List<Category> getAllCategories() => const [
-        Category(id: 'food', name: 'Food'),
-        Category(id: 'transport', name: 'Transport'),
-      ];
+  Future<PhraseCatalog> _catalog() async {
+    final cached = _cache;
+    if (cached != null) return cached;
 
-  List<Phrase> getPhrasesByCategory(String categoryId) {
-    const all = <Phrase>[
-      Phrase(
-        id: 'p1',
-        categoryId: 'food',
-        english: 'Water, please.',
-        japanese: 'お水をください。',
-        romaji: 'Omizu o kudasai.',
-      ),
-      Phrase(
-        id: 'p2',
-        categoryId: 'transport',
-        english: 'Where is the station?',
-        japanese: '駅はどこですか？',
-        romaji: 'Eki wa doko desu ka?',
-      ),
-    ];
-    return all.where((p) => p.categoryId == categoryId).toList();
+    final loaded = await PhraseCatalog.loadFromAssets();
+    _cache = loaded;
+    return loaded;
+  }
+
+  Future<List<Category>> getAllCategories() async {
+    final c = await _catalog();
+    return c.categories;
+  }
+
+  Future<List<Phrase>> getPhrasesByCategory(String categoryId) async {
+    final c = await _catalog();
+    return c.phrases.where((p) => p.categoryId == categoryId).toList(growable: false);
   }
 }

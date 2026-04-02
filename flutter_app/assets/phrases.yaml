@@ -1,0 +1,358 @@
+categories:
+  - id: airport
+    name: Airport
+    icon: "✈️"
+    description: Navigating the airport
+  - id: immigration
+    name: Immigration
+    icon: "🛂"
+    description: Passport control & customs
+  - id: taxi
+    name: Taxi
+    icon: "🚕"
+    description: Getting a cab
+  - id: train
+    name: Train Station
+    icon: "🚆"
+    description: Trains and rail travel
+  - id: hotel
+    name: Hotel
+    icon: "🏨"
+    description: Check-in, check-out, requests
+  - id: restaurant
+    name: Restaurant
+    icon: "🍜"
+    description: Ordering food and drinks
+  - id: shopping
+    name: Shopping
+    icon: "🛍️"
+    description: Buying goods
+  - id: directions
+    name: Directions
+    icon: "🗺️"
+    description: Finding your way
+  - id: emergency
+    name: Emergency
+    icon: "🚨"
+    description: Urgent help phrases
+  - id: small_talk
+    name: Small Talk
+    icon: "💬"
+    description: Casual conversation
+
+phrases:
+  - id: a001
+    english: I need to check in my luggage.
+    japanese: 荷物を預けたいのですが。
+    romanji: Nimotsu wo azuketai no desu ga.
+    category: airport
+    tags: [ luggage, checkin ]
+  - id: a002
+    english: Where is the departure gate?
+    japanese: 出発ゲートはどこですか？
+    romanji: Shuppatsu geeto wa doko desu ka?
+    category: airport
+    tags: [ gate, departure ]
+  - id: a003
+    english: Where is the check-in counter?
+    japanese: チェックインカウンターはどこですか？
+    romanji: Chekkuin kauntaa wa doko desu ka?
+    category: airport
+    tags: [ checkin, counter ]
+  - id: a004
+    english: My flight is delayed.
+    japanese: 私の便は遅れています。
+    romanji: Watashi no bin wa okurete imasu.
+    category: airport
+    tags: [ delay, flight ]
+  - id: a005
+    english: Where is baggage claim?
+    japanese: 手荷物受取所はどこですか？
+    romanji: Tenimotsu uketorijo wa doko desu ka?
+    category: airport
+    tags: [ baggage, claim ]
+  - id: a006
+    english: Where are the toilets?
+    japanese: トイレはどこですか？
+    romanji: Toire wa doko desu ka?
+    category: airport
+    tags: [ toilet, restroom, bathroom ]
+
+  - id: i001
+    english: I am here for tourism.
+    japanese: 観光で来ました。
+    romanji: Kankou de kimashita.
+    category: immigration
+    tags: [ tourism, visa ]
+  - id: i002
+    english: How long can I stay?
+    japanese: どのくらい滞在できますか？
+    romanji: Dono kurai taizai dekimasu ka?
+    category: immigration
+    tags: [ stay, visa ]
+  - id: i003
+    english: Here is my passport.
+    japanese: パスポートはこちらです。
+    romanji: Pasupooto wa kochira desu.
+    category: immigration
+    tags: [ passport ]
+  - id: i004
+    english: I am staying at a hotel.
+    japanese: ホテルに泊まります。
+    romanji: Hoteru ni tomarimasu.
+    category: immigration
+    tags: [ hotel, stay ]
+  - id: i005
+    english: Nothing to declare.
+    japanese: 申告するものはありません。
+    romanji: Shinkoku suru mono wa arimasen.
+    category: immigration
+    tags: [ customs ]
+
+  - id: t001
+    english: Please take me to this address.
+    japanese: この住所まで連れて行ってください。
+    romanji: Kono juusho made tsurete itte kudasai.
+    category: taxi
+    tags: [ address, driver ]
+  - id: t002
+    english: How much will it cost?
+    japanese: いくらかかりますか？
+    romanji: Ikura kakarimasu ka?
+    category: taxi
+    tags: [ price, cost ]
+  - id: t003
+    english: Please use the meter.
+    japanese: メーターを使ってください。
+    romanji: Meetaa wo tsukatte kudasai.
+    category: taxi
+    tags: [ meter ]
+  - id: t004
+    english: Please stop here.
+    japanese: ここで止めてください。
+    romanji: Koko de tomete kudasai.
+    category: taxi
+    tags: [ stop ]
+  - id: t005
+    english: Can you give me a receipt?
+    japanese: 領収書をもらえますか？
+    romanji: Ryoushuusho wo moraemasu ka?
+    category: taxi
+    tags: [ receipt ]
+
+  - id: tr001
+    english: Which platform for Kyoto?
+    japanese: 京都行きは何番ホームですか？
+    romanji: Kyoto yuki wa nanban hoomu desu ka?
+    category: train
+    tags: [ platform, kyoto ]
+  - id: tr002
+    english: One ticket to Tokyo, please.
+    japanese: 東京まで切符を一枚ください。
+    romanji: Toukyou made kippu wo ichimai kudasai.
+    category: train
+    tags: [ ticket ]
+  - id: tr003
+    english: Does this train stop at Osaka?
+    japanese: この電車は大阪に止まりますか？
+    romanji: Kono densha wa Oosaka ni tomarimasu ka?
+    category: train
+    tags: [ stop, osaka ]
+  - id: tr004
+    english: Where is the ticket gate?
+    japanese: 改札口はどこですか？
+    romanji: Kaisatsuguchi wa doko desu ka?
+    category: train
+    tags: [ gate ]
+  - id: tr005
+    english: What time is the last train?
+    japanese: 終電は何時ですか？
+    romanji: Shuuden wa nanji desu ka?
+    category: train
+    tags: [ last_train, time ]
+
+  - id: h001
+    english: I have a reservation.
+    japanese: 予約があります。
+    romanji: Yoyaku ga arimasu.
+    category: hotel
+    tags: [ reservation, booking ]
+  - id: h002
+    english: Can I check in now?
+    japanese: 今チェックインできますか？
+    romanji: Ima chekkuin dekimasu ka?
+    category: hotel
+    tags: [ checkin ]
+  - id: h003
+    english: Can I get a wake-up call?
+    japanese: モーニングコールをお願いします。
+    romanji: Moorningu kooru wo onegaishimasu.
+    category: hotel
+    tags: [ wakeup ]
+  - id: h004
+    english: The key card doesn't work.
+    japanese: カードキーが使えません。
+    romanji: Kaado kii ga tsukaemasen.
+    category: hotel
+    tags: [ keycard ]
+  - id: h005
+    english: Can I check out late?
+    japanese: レイトチェックアウトはできますか？
+    romanji: Reito chekkuauto wa dekimasu ka?
+    category: hotel
+    tags: [ checkout ]
+
+  - id: r001
+    english: A table for two, please.
+    japanese: 二人用のテーブルをお願いします。
+    romanji: Futari you no teeburu wo onegaishimasu.
+    category: restaurant
+    tags: [ table, seating ]
+  - id: r002
+    english: What do you recommend?
+    japanese: 何がおすすめですか？
+    romanji: Nani ga osusume desu ka?
+    category: restaurant
+    tags: [ recommend, menu ]
+  - id: r003
+    english: Do you have an English menu?
+    japanese: 英語のメニューはありますか？
+    romanji: Eigo no menyuu wa arimasu ka?
+    category: restaurant
+    tags: [ menu, english ]
+  - id: r004
+    english: No spicy, please.
+    japanese: 辛くしないでください。
+    romanji: Karakushinaide kudasai.
+    category: restaurant
+    tags: [ spicy ]
+  - id: r005
+    english: Can I have the bill, please?
+    japanese: お会計お願いします。
+    romanji: Okaikei onegaishimasu.
+    category: restaurant
+    tags: [ bill, payment ]
+
+  - id: s001
+    english: How much is this?
+    japanese: これはいくらですか？
+    romanji: Kore wa ikura desu ka?
+    category: shopping
+    tags: [ price, cost ]
+  - id: s002
+    english: Do you accept credit cards?
+    japanese: クレジットカードは使えますか？
+    romanji: Kurejitto kaado wa tsukaemasu ka?
+    category: shopping
+    tags: [ card, payment ]
+  - id: s003
+    english: Can I try this on?
+    japanese: 試着してもいいですか？
+    romanji: Shichaku shite mo ii desu ka?
+    category: shopping
+    tags: [ try_on ]
+  - id: s004
+    english: Do you have this in another size?
+    japanese: 別のサイズはありますか？
+    romanji: Betsu no saizu wa arimasu ka?
+    category: shopping
+    tags: [ size ]
+  - id: s005
+    english: Can you wrap it as a gift?
+    japanese: ギフト用に包んでもらえますか？
+    romanji: Gifuto you ni tsutsunde moraemasu ka?
+    category: shopping
+    tags: [ gift, wrap ]
+
+  - id: d001
+    english: How do I get to the station?
+    japanese: 駅へはどうやって行きますか？
+    romanji: Eki e wa douyatte ikimasu ka?
+    category: directions
+    tags: [ station, directions ]
+  - id: d002
+    english: Is it far from here?
+    japanese: ここから遠いですか？
+    romanji: Koko kara tooi desu ka?
+    category: directions
+    tags: [ far ]
+  - id: d003
+    english: Please show me on the map.
+    japanese: 地図で教えてください。
+    romanji: Chizu de oshiete kudasai.
+    category: directions
+    tags: [ map ]
+  - id: d004
+    english: Turn left at the next corner.
+    japanese: 次の角を左に曲がってください。
+    romanji: Tsugi no kado wo hidari ni magatte kudasai.
+    category: directions
+    tags: [ left, turn ]
+  - id: d005
+    english: Where is the nearest convenience store?
+    japanese: 一番近いコンビニはどこですか？
+    romanji: Ichiban chikai konbini wa doko desu ka?
+    category: directions
+    tags: [ convenience_store ]
+
+  - id: e001
+    english: Please call an ambulance!
+    japanese: 救急車を呼んでください！
+    romanji: Kyuukyuusha wo yonde kudasai!
+    category: emergency
+    tags: [ ambulance, urgent ]
+  - id: e002
+    english: I need the police.
+    japanese: 警察が必要です。
+    romanji: Keisatsu ga hitsuyou desu.
+    category: emergency
+    tags: [ police, urgent ]
+  - id: e003
+    english: I lost my passport.
+    japanese: パスポートをなくしました。
+    romanji: Pasupooto wo nakushimashita.
+    category: emergency
+    tags: [ passport, lost ]
+  - id: e004
+    english: I feel sick.
+    japanese: 気分が悪いです。
+    romanji: Kibun ga warui desu.
+    category: emergency
+    tags: [ sick ]
+  - id: e005
+    english: Help!
+    japanese: 助けて！
+    romanji: Tasukete!
+    category: emergency
+    tags: [ help ]
+
+  - id: st001
+    english: Nice to meet you.
+    japanese: はじめまして。
+    romanji: Hajimemashite.
+    category: small_talk
+    tags: [ greeting, introduction ]
+  - id: st002
+    english: Do you speak English?
+    japanese: 英語を話せますか？
+    romanji: Eigo wo hanasemasu ka?
+    category: small_talk
+    tags: [ language, english ]
+  - id: st003
+    english: Where are you from?
+    japanese: どちらのご出身ですか？
+    romanji: Dochira no goshusshin desu ka?
+    category: small_talk
+    tags: [ where_from ]
+  - id: st004
+    english: I like Japan.
+    japanese: 日本が好きです。
+    romanji: Nihon ga suki desu.
+    category: small_talk
+    tags: [ like, japan ]
+  - id: st005
+    english: Thank you!
+    japanese: ありがとうございます！
+    romanji: Arigatou gozaimasu!
+    category: small_talk
+    tags: [ thanks ]

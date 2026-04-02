@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../models/phrase.dart';
+import '../state/app_state.dart';
 
 class PhraseDetailScreen extends StatelessWidget {
   final Phrase phrase;
@@ -9,6 +11,9 @@ class PhraseDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<AppState>();
+    final shown = state.currentPhrase ?? phrase;
+
     return Scaffold(
       appBar: AppBar(title: const Text('Phrase Detail')),
       body: Padding(
@@ -24,17 +29,31 @@ class PhraseDetailScreen extends StatelessWidget {
                 children: [
                   Text('English', style: Theme.of(context).textTheme.labelLarge),
                   const SizedBox(height: 4),
-                  Text(phrase.english, style: Theme.of(context).textTheme.titleLarge),
+                  Text(shown.english, style: Theme.of(context).textTheme.titleLarge),
                   const SizedBox(height: 16),
                   Text('Japanese', style: Theme.of(context).textTheme.labelLarge),
                   const SizedBox(height: 4),
-                  Text(phrase.japanese, style: Theme.of(context).textTheme.titleLarge),
-                  if ((phrase.romaji ?? '').isNotEmpty) ...[
+                  Text(shown.japanese, style: Theme.of(context).textTheme.titleLarge),
+                  if ((shown.romaji ?? '').isNotEmpty) ...[
                     const SizedBox(height: 16),
                     Text('Romaji', style: Theme.of(context).textTheme.labelLarge),
                     const SizedBox(height: 4),
-                    Text(phrase.romaji!),
+                    Text(shown.romaji!),
                   ],
+                  const SizedBox(height: 24),
+                  Row(
+                    children: [
+                      OutlinedButton(
+                        onPressed: () => context.read<AppState>().prevPhrase(),
+                        child: const Text('Prev'),
+                      ),
+                      const SizedBox(width: 12),
+                      OutlinedButton(
+                        onPressed: () => context.read<AppState>().nextPhrase(),
+                        child: const Text('Next'),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
