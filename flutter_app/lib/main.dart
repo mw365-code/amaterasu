@@ -19,7 +19,7 @@ class TravelPhraseApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Travel Phrases',
+      title: 'Japan: Help Me',
       theme: ThemeData(useMaterial3: true),
       home: const HomeScreen(),
     );
